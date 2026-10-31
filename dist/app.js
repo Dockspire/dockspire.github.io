@@ -27,6 +27,9 @@ const ship = $('#ship');
 const sink = $('#sink');
 const sinkLabel = $('#sink-label');
 const status = $('#ship-status');
+const systemRoute = $('#system-route');
+const systemPacket = $('#system-packet');
+const systemRouteLength = systemRoute.getTotalLength();
 const clamp = (n, a = 0, b = 1) => Math.min(b, Math.max(a, n));
 const mix = (a, b, p) => a + (b - a) * p;
 const ease = p => p < .5 ? 2 * p * p : 1 - (-2 * p + 2) ** 2 / 2;
@@ -196,6 +199,8 @@ function tick(now) {
   const delta = Math.min((now - lastTime) / 1000, .05);
   lastTime = now;
   elapsed += delta;
+  const packetPoint = systemRoute.getPointAtLength(((now / 4200) % 1) * systemRouteLength);
+  systemPacket.setAttribute('transform', `translate(${packetPoint.x} ${packetPoint.y})`);
   if (state === 'sailing') {
     const entry = ease(clamp((now - start) / 6000));
     const target = mix(-110, 100, entry) + scroll * 100 + hoverX * 6;
