@@ -21,6 +21,8 @@ const stern = document.querySelector('#stern-piece');
 const bow = document.querySelector('#bow-piece');
 const cargo = [...document.querySelectorAll('#ship .container')];
 const fragments = [...document.querySelectorAll('.crash-fragment')];
+const smokePuffs = [...document.querySelectorAll('.blast-puff')];
+const sparks = [...document.querySelectorAll('.blast-spark')];
 const ship = $('#ship');
 const sink = $('#sink');
 const sinkLabel = $('#sink-label');
@@ -66,15 +68,15 @@ function setStatus(text) { if (status.textContent !== text) status.textContent =
 
 function impactSound() {
   if (!sound || !audio) return;
-  const buffer = audio.createBuffer(1, audio.sampleRate * .55, audio.sampleRate);
+  const buffer = audio.createBuffer(1, audio.sampleRate * .85, audio.sampleRate);
   const samples = buffer.getChannelData(0);
   for (let i = 0; i < samples.length; i++) samples[i] = (Math.random() * 2 - 1) * (1 - i / samples.length) ** 3;
   const noise = audio.createBufferSource();
   const gain = audio.createGain();
-  gain.gain.value = .12;
+  gain.gain.value = .16;
   noise.buffer = buffer;
   noise.connect(gain); gain.connect(audio.destination); noise.start();
-  tone(65, .7, 'triangle', .10); tone(94, .35, 'sawtooth', .025);
+  tone(45, 1.1, 'triangle', .13); tone(94, .4, 'sawtooth', .025);
 }
 
 // One clock keeps the impact, split hull, cargo trajectories and spray in sync.
@@ -96,6 +98,28 @@ function renderCrash(t, effects = true) {
     const rotation = [-150, 210, 310][i] * p;
     item.style.transform = `translate(${dx}px,${dy}px) rotate(${rotation}deg)`;
     item.style.opacity = String(1 - clamp((p - .8) / .2));
+  });
+  const blastAge = t - 1.6;
+  const ignition = clamp(blastAge / .18);
+  const fireFade = 1 - clamp((blastAge - .7) / .9);
+  $('#explosion-fire').style.opacity = effects ? String(ignition * fireFade) : '0';
+  $('#fireball').style.transform = `translate(0,${-20 * clamp(blastAge / 1.6)}px) scale(${.18 + ignition * .82 + clamp(blastAge / 1.6) * .25}) rotate(${-8 + 14 * clamp(blastAge / 1.6)}deg)`;
+  const smokeAge = Math.max(0, blastAge - .12);
+  $('#explosion-smoke').style.opacity = effects && blastAge > .12 ? '1' : '0';
+  smokePuffs.forEach((puff, i) => {
+    const p = clamp((smokeAge - i * .06) / 3.5);
+    const spread = (i % 2 ? 1 : -1) * (25 + i * 13);
+    puff.setAttribute('transform', `translate(${1030 + spread * p} ${310 - (110 + i * 9) * p}) scale(${.35 + p * 1.2})`);
+    puff.style.opacity = String(clamp(p * 12) * (1 - p) * .8);
+  });
+  const sparkAge = clamp((blastAge - .04) / 1.55);
+  $('#explosion-sparks').style.opacity = effects && blastAge > .04 ? String(1 - sparkAge) : '0';
+  sparks.forEach((spark, i) => {
+    const angle = i * Math.PI * 2 / sparks.length;
+    const speed = 145 + (i * 47) % 135;
+    const x = 1030 + Math.cos(angle) * speed * sparkAge;
+    const y = 320 + Math.sin(angle) * speed * sparkAge + 115 * sparkAge ** 2;
+    spark.setAttribute('transform', `translate(${x} ${y}) rotate(${i * 37 + sparkAge * 150}) scale(${1 - sparkAge * .6})`);
   });
   const burst = clamp((t - 1.6) / .15) * (1 - clamp((t - 2.65) / .45));
   $('#impact-burst').style.opacity = effects ? String(burst) : '0';
@@ -122,7 +146,7 @@ function renderCrash(t, effects = true) {
 
 function resetShip() {
   [stern, bow, ...cargo].forEach(part => { part.style.transform = ''; part.style.opacity = ''; });
-  ['#hull-crack', '#impact-burst', '#crash-fragments', '#crash-splash', '#impact-waves'].forEach(selector => { $(selector).style.opacity = '0'; });
+  ['#hull-crack', '#impact-burst', '#crash-fragments', '#crash-splash', '#impact-waves', '#explosion-smoke', '#explosion-fire', '#explosion-sparks'].forEach(selector => { $(selector).style.opacity = '0'; });
 }
 
 function startSink() {
@@ -180,7 +204,8 @@ function tick(now) {
   } else if (state === 'sinking') {
     renderCrash(elapsed);
     if (elapsed >= 1.6 && !impactPlayed) { impactPlayed = true; impactSound(); }
-    if (elapsed >= 1.6 && elapsed < 3.1) setStatus('STRUCTURAL INTEGRITY: OPTIONAL.');
+    if (elapsed >= 1.6 && elapsed < 2.05) setStatus('IGNITION. THIS SEEMS FINE.');
+    else if (elapsed >= 2.05 && elapsed < 3.1) setStatus('BOOM. THAT WAS NOT IN THE BRIEF.');
     else if (elapsed >= 3.1 && elapsed < 5.2) setStatus('NOW SHIPPING IN MULTIPLE PIECES.');
     else if (elapsed >= 5.2) setStatus('PRIORITY ONE: SAVE THE COFFEE.');
     if (elapsed >= crashDuration) finishSink();

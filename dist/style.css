@@ -28,3 +28,6 @@ dialog{width:calc(100% - 36px);max-width:510px;max-height:90dvh;overflow-y:auto;
 @media(prefers-reduced-motion:no-preference){.motion-on .flotsam-bob{animation:flotsam 3.8s ease-in-out infinite}.motion-on .wreckage{transition:opacity .4s}.motion-on.is-sinking .g1{animation-duration:1.8s}.motion-on.is-sinking .g2{animation-duration:2.3s}}
 @keyframes flotsam{0%,100%{transform:translate(0,0) rotate(-.4deg);transform-origin:880px 420px}50%{transform:translate(0,4px) rotate(.7deg);transform-origin:880px 420px}}
 @media(max-width:760px){.is-sunk .incident-tag{left:46%;top:36%;font-size:7px}}
+
+/* Fire, smoke and sparks use the collision clock, so pausing and relaunch stay in sync. */
+#explosion-smoke,#explosion-fire,#explosion-sparks{opacity:0}#fireball{transform-origin:0 0}.blast-puff,.blast-spark{transform-origin:0 0}
