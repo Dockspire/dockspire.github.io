@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f4f2e9">
+  <meta name="description" content="Dockspire is a digital workshop for websites, apps and useful little tools. We ship. Mostly.">
+  <title>Dockspire — We ship. Mostly.</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/SpaceGrotesk.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the good stuff</a>
+<header class="nav">
+  <a class="wordmark" href="#" aria-label="Dockspire home"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M18 3v23M11 9h14M5 20c0 9 8 12 13 12s13-3 13-12M1 23l4-5 5 4M26 22l5-4 4 5"/></svg>dockspire<span>✳</span></a>
+  <nav aria-label="Main"><a href="#cargo">The cargo <span>↘</span></a><a href="#bearing">Our bearing <span>↘</span></a></nav>
+  <button class="nav-contact contact-trigger">Get aboard <span>↗</span></button>
+</header>
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-top">
+      <div class="hero-type"><p class="eyebrow"><span class="status-dot"></span> INDEPENDENT DIGITAL WORKSHOP</p><h1 id="hero-title"><span class="line">WE SHIP<span class="period">.</span></span><span class="line second">MOSTLY<span class="asterisk">*</span></span></h1></div>
+      <div class="hero-aside"><span class="north-star" aria-hidden="true">✳</span><p>Good ideas.<br>Solid builds.<br><span>Questionable buoyancy.</span></p><div class="hero-note"><span>①</span><p>We design & build digital things.<br>The boat is a different story.</p></div></div>
+    </div>
+    <div class="hero-bottom"><a class="text-link" href="#cargo">Discover the cargo <span>↓</span></a><p>*Metaphorically, we’re very reliable.</p><div class="settings"><button id="sound" aria-pressed="false">Sound <span>off</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 8h3l4-4v12l-4-4H3zM14 7l4 6M18 7l-4 6"/></svg></button><button id="motion" aria-pressed="true">Motion <span>on</span><i aria-hidden="true"></i></button></div></div>
+    <div class="harbor" id="harbor">
+      <div class="harbor-grid" aria-hidden="true"></div>
+      <div class="scene-meta"><span>DOCK 01 / OPEN WATER</span><span>50°27′ N &nbsp; 30°31′ E</span></div>
+      <svg class="harbor-art" viewBox="0 0 1440 600" role="img" aria-labelledby="scene-title scene-desc">
+        <title id="scene-title">The very optimistic S.S. Dockspire</title><desc id="scene-desc">An orange cargo ship carrying design, code and coffee approaches a dock. The red button triggers a cartoon collision: the hull splits, containers fly and the ship sinks. The coffee survives. Relaunch to try again.</desc>
+        <defs>
+          <linearGradient id="sea" x2="0" y2="1"><stop stop-color="#a7c8c0"/><stop offset="1" stop-color="#759f96"/></linearGradient>
+          <linearGradient id="hull" x2="0" y2="1"><stop stop-color="#ff633e"/><stop offset="1" stop-color="#e3492b"/></linearGradient>
+          <linearGradient id="cream" x2="1" y2="1"><stop stop-color="#fcfaf2"/><stop offset="1" stop-color="#d8d7c9"/></linearGradient>
+          <pattern id="ribs" width="14" height="60" patternUnits="userSpaceOnUse"><path d="M2 0v60" stroke="#172b2b" stroke-opacity=".16" stroke-width="2"/></pattern>
+          <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#153b36" flood-opacity=".12"/></filter>
+
+          <clipPath id="stern-clip"><path d="M0 0H550V305l-15 21 25 18-28 21 20 19-22 26V600H0Z"/></clipPath>
+          <clipPath id="bow-clip"><path d="M550 0H1600V600H530V410l22-26-20-19 28-21-25-18 15-21Z"/></clipPath>
+          <g id="ship-structure"><path d="M337 205v-64h37v64" fill="#263e37"/><path d="M335 141h41v17h-41z" fill="#e95835"/>
+          <path d="M269 316V201h139v115" fill="url(#cream)"/><path d="M408 201l-19-17H250l19 17z" fill="#ffffff"/><path d="M250 184v112l19 20V201z" fill="#c8c9b7"/><path d="M280 220h27v27h-27zm41 0h27v27h-27zm41 0h27v27h-27z" fill="#284b44"/><path d="m281 221 24 24m18-24 23 24m18-24 23 24" stroke="#66867b" stroke-width="2"/><path d="M278 263h108v5H278z" fill="#b8bca9"/><path d="M288 282h24v34h-24z" fill="#8b9a88"/>
+          <path d="M292 184v-51" stroke="#334b40" stroke-width="3"/><path class="ship-flag" d="M294 134h48l-10 12 10 12h-48z" fill="#d4e864"/><text x="311" y="150" class="svg-mono" font-size="9">D/S</text>
+          
+          
+          
+          <path d="M240 313h530l-45 69q-10 18-35 18H310q-23 0-35-17z" fill="url(#hull)"/><path d="M240 313h530l-15 23H251z" fill="#ff8a61"/><path d="M275 377h452l-8 12q-8 11-29 11H310q-20 0-31-14z" fill="#203c34"/><path d="M249 337h503" stroke="#f3e7d2" stroke-width="5"/><text x="349" y="367" class="svg-container hull-label" font-size="21" letter-spacing="3">S.S. DOCKSPIRE</text><circle cx="690" cy="352" r="7" fill="#213e37"/><circle cx="709" cy="352" r="7" fill="#213e37"/><path d="M270 305h487" stroke="#1f3c34" stroke-width="3"/><path d="M280 305v-18m35 18v-18m35 18v-18m375 18v-18m25 18v-18" stroke="#344e42" stroke-width="3"/><path d="M278 287h74m370 0h31" stroke="#344e42" stroke-width="3"/>
+          <g class="ship-tire" stroke="#263f34" fill="none" stroke-width="8"><circle cx="311" cy="340" r="14"/><circle cx="641" cy="340" r="14"/></g></g>
+        </defs>
+        <g class="cloud cloud-one" opacity=".8" fill="none" stroke="#b6bbb0" stroke-width="1"><path d="M120 160h140m-104-8h90m-80-8h60"/><path d="M760 90h120m-90-8h56"/></g>
+        <g class="cloud cloud-two" opacity=".5" fill="none" stroke="#b6bbb0"><path d="M890 165h100m-80-8h56M40 220h110"/></g>
+        <circle cx="977" cy="126" r="65" fill="#e5e4d8"/><circle cx="977" cy="126" r="54" fill="none" stroke="#d8d8ca"/>
+        <g class="gulls" fill="none" stroke="#243d39" stroke-linecap="round" stroke-width="3"><path class="gull g1" d="M820 130q9-12 18 0 9-12 18 0"/><path class="gull g2" d="M735 180q6-8 12 0 6-8 12 0"/><path class="gull g3" d="M1050 75q7-9 14 0 7-9 14 0"/></g>
+        <g class="distant-port" stroke="#94a79c" fill="none" stroke-width="2"><path d="M20 350V285h100v65m-95-65 45-34 45 34M95 350V270h75v80M160 350v-45h100v45"/><path d="M30 303h16m15 0h16m15 0h16M110 290h15m10 0h15M190 325h20m12 0h20"/></g>
+        <path class="wave-back" d="M-200 360Q-140 343-80 360T160 360T400 360T640 360T880 360T1120 360T1360 360T1600 360V1100H-200Z" fill="#bfd6cc"/>
+        <g class="crane" stroke="#29463e" stroke-width="9" stroke-linejoin="round" fill="none"><path d="M1250 345V94L1115 33h-70L980 94h270M1115 33l135 61M1115 33v61M1045 33l-65 61M1124 94l126 126M1250 94l-126 126M1124 220l126 125"/><path d="M1110 94v106" stroke-width="3"/><path class="hook" d="M1110 200v20q20 0 16-16" stroke-width="5"/><path d="M963 94h310" stroke-width="12"/></g>
+        <g class="dock"><path d="M1080 340h400v30h-400z" fill="#344d42"/><path d="M1080 333h400v10h-400z" fill="#c4c3a8"/><path d="M1100 370v166m90-166v166m90-166v166m90-166v166" stroke="#2e493e" stroke-width="15"/><path d="m1100 390 90 87 90-87 90 87" fill="none" stroke="#476254" stroke-width="8"/><path d="M1090 330h100" stroke="#ec5c37" stroke-width="7" stroke-dasharray="10 10"/><rect x="1290" y="264" width="111" height="48" fill="#e8e7d6" stroke="#30493f" stroke-width="2"/><text x="1345" y="284" class="svg-mono" text-anchor="middle" font-size="10">DEFINITELY</text><text x="1345" y="299" class="svg-mono" text-anchor="middle" font-size="10">A REAL DOCK</text><path d="M1303 312v21m82-21v21" stroke="#30493f" stroke-width="3"/><circle cx="1095" cy="372" r="21" stroke="#203b34" stroke-width="11" fill="none"/><circle cx="1195" cy="372" r="21" stroke="#203b34" stroke-width="11" fill="none"/></g>
+        <ellipse class="ship-shadow" cx="570" cy="411" rx="310" ry="18" fill="#2e6359" opacity=".14"/>
+        <g id="ship"><g class="ship-bob">
+          <g class="smoke" fill="#d3d8c9"><circle class="smoke-puff p1" cx="365" cy="140" r="14"/><circle class="smoke-puff p2" cx="347" cy="113" r="19"/><circle class="smoke-puff p3" cx="320" cy="90" r="25"/></g>
+          <g id="stern-piece"><g clip-path="url(#stern-clip)"><use href="#ship-structure"/></g></g>
+          <g id="bow-piece"><g clip-path="url(#bow-clip)"><use href="#ship-structure"/></g></g>
+          <path id="hull-crack" d="M550 305l-15 21 25 18-28 21 20 19-22 26" fill="none" stroke="#f4f2e9" stroke-width="5"/>
+          <g class="container code-container"><path d="m430 252 17-16h138l-17 16z" fill="#e5ee9b"/><path d="m568 252 17-16v72l-17 16z" fill="#a5b94b"/><rect x="430" y="252" width="138" height="72" rx="2" fill="#c8de67"/><rect x="430" y="252" width="138" height="72" fill="url(#ribs)"/><text x="451" y="291" class="svg-container" font-size="22">CODE</text><path d="M438 259v59m122-59v59" stroke="#567039" stroke-width="2"/></g>
+          <g class="container design-container"><path d="m591 252 17-16h138l-17 16z" fill="#ffae91"/><path d="m729 252 17-16v72l-17 16z" fill="#d95232"/><rect x="591" y="252" width="138" height="72" rx="2" fill="#fa8a65"/><rect x="591" y="252" width="138" height="72" fill="url(#ribs)"/><text x="606" y="291" class="svg-container" font-size="21">DESIGN</text><path d="M599 259v59m122-59v59" stroke="#ab5136" stroke-width="2"/></g>
+          <g class="container coffee-container"><path d="m510 166 17-16h126l-17 16z" fill="#f8f4df"/><path d="m636 166 17-16v69l-17 16z" fill="#c3c5ac"/><rect x="510" y="166" width="126" height="69" rx="2" fill="#e8e9ce"/><rect x="510" y="166" width="126" height="69" fill="url(#ribs)"/><text x="524" y="207" class="svg-container" font-size="20">COFFEE</text><path d="M518 173v55m110-55v55" stroke="#a8af92" stroke-width="2"/></g>
+        </g></g>
+        <g id="impact-burst" transform="translate(1057 303)"><g id="impact-pop"><path d="m0-77 24 32 35-20-3 37 44 3-28 29 29 27-43 6 0 40-36-23-27 35-12-40-40 15 12-39-39-17 37-21-23-32 41 4Z" fill="#d1e56a" stroke="#203c34" stroke-width="3"/><text text-anchor="middle" y="8" font-family="Space,Arial,sans-serif" font-size="29" font-weight="700" fill="#203c34" transform="rotate(-9)">CRUNCH!</text></g></g>
+        <g id="crash-fragments"><g class="crash-fragment" data-index="0"><rect x="-6" y="-6" width="12" height="12" rx="1" fill="#ef5a38"/></g><g class="crash-fragment" data-index="1"><path d="M-9-4 8-6 12 3-6 6Z" fill="#203c34"/></g><g class="crash-fragment" data-index="2"><path d="M-9-4 8-6 12 3-6 6Z" fill="#d1e56a"/></g><g class="crash-fragment" data-index="3"><rect x="-6" y="-6" width="12" height="12" rx="1" fill="#f4e9d6"/></g><g class="crash-fragment" data-index="4"><path d="M-9-4 8-6 12 3-6 6Z" fill="#ef5a38"/></g><g class="crash-fragment" data-index="5"><path d="M-9-4 8-6 12 3-6 6Z" fill="#203c34"/></g><g class="crash-fragment" data-index="6"><rect x="-6" y="-6" width="12" height="12" rx="1" fill="#d1e56a"/></g><g class="crash-fragment" data-index="7"><path d="M-9-4 8-6 12 3-6 6Z" fill="#f4e9d6"/></g><g class="crash-fragment" data-index="8"><path d="M-9-4 8-6 12 3-6 6Z" fill="#ef5a38"/></g><g class="crash-fragment" data-index="9"><rect x="-6" y="-6" width="12" height="12" rx="1" fill="#203c34"/></g><g class="crash-fragment" data-index="10"><path d="M-9-4 8-6 12 3-6 6Z" fill="#d1e56a"/></g><g class="crash-fragment" data-index="11"><path d="M-9-4 8-6 12 3-6 6Z" fill="#f4e9d6"/></g><g class="crash-fragment" data-index="12"><rect x="-6" y="-6" width="12" height="12" rx="1" fill="#ef5a38"/></g><g class="crash-fragment" data-index="13"><path d="M-9-4 8-6 12 3-6 6Z" fill="#203c34"/></g><g class="crash-fragment" data-index="14"><path d="M-9-4 8-6 12 3-6 6Z" fill="#d1e56a"/></g><g class="crash-fragment" data-index="15"><rect x="-6" y="-6" width="12" height="12" rx="1" fill="#f4e9d6"/></g><g class="crash-fragment" data-index="16"><path d="M-9-4 8-6 12 3-6 6Z" fill="#ef5a38"/></g><g class="crash-fragment" data-index="17"><path d="M-9-4 8-6 12 3-6 6Z" fill="#203c34"/></g><g class="crash-fragment" data-index="18"><rect x="-6" y="-6" width="12" height="12" rx="1" fill="#d1e56a"/></g><g class="crash-fragment" data-index="19"><path d="M-9-4 8-6 12 3-6 6Z" fill="#f4e9d6"/></g><g class="crash-fragment" data-index="20"><path d="M-9-4 8-6 12 3-6 6Z" fill="#ef5a38"/></g><g class="crash-fragment" data-index="21"><rect x="-6" y="-6" width="12" height="12" rx="1" fill="#203c34"/></g></g>
+        <g id="crash-splash" fill="#f0f0db"><path d="M881 405q-12-69-40-81 39-8 61 37-4-91 23-124 23 44 12 104 40-79 75-74-21 41-24 86 60-43 86-20-49 23-57 72Z"/><path d="M1087 405q-5-70 22-108 18 28 12 68 27-37 56-27-28 31-34 67Z"/></g>
+        <path class="wave-mid" d="M-200 404Q-140 388-80 404T160 404T400 404T640 404T880 404T1120 404T1360 404T1600 404V1100H-200Z" fill="url(#sea)"/>
+        <g class="sea-strokes" stroke="#edf1dc" stroke-width="2" stroke-linecap="round" opacity=".6"><path class="stroke s1" d="M90 448h75m220-9h90m155 38h110m270-42h95m160 49h90"/><path class="stroke s2" d="M230 505h90m220 10h80m185 15h120m275-15h110"/><path class="stroke s3" d="M20 560h130m570 5h100m140-6h80m265 8h90"/></g>
+        <g id="impact-waves" fill="none" stroke="#e5ebd5" stroke-width="3"><ellipse id="impact-ring-one" cx="985" cy="416" rx="45" ry="10"/><ellipse id="impact-ring-two" cx="985" cy="416" rx="45" ry="10"/></g>
+        <g class="wreckage" id="wreckage"><g class="flotsam-bob">
+          <ellipse cx="865" cy="423" rx="165" ry="13" fill="#376d5b" opacity=".18"/>
+          <g transform="translate(762 397) rotate(-9)"><path d="M-42-6h85l-12 18h-58Z" fill="#ef5a38"/><path d="M-35-5h72" stroke="#f4e9d6" stroke-width="4"/><text x="-25" y="6" class="svg-mono" font-size="8">S.S. OOPS</text></g>
+          <g transform="translate(894 398) rotate(7)"><path d="M-45-26h88v43h-88Z" fill="#e8e9ce" stroke="#344632" stroke-width="1.5"/><path d="M-40-22v34m77-34v34" stroke="#a8af92" stroke-width="2"/><text text-anchor="middle" y="1" class="svg-container" font-size="15">COFFEE</text><path d="M-45 10q21-6 44 0t44 0v8h-88Z" fill="#a7c8c0"/></g>
+          <g transform="translate(1007 407) rotate(-16)"><path d="M-18-8h38v16h-38Z" fill="#d1e56a"/><text text-anchor="middle" y="3" class="svg-mono" font-size="8">404</text></g>
+          <g transform="translate(891 363)"><path d="M-15 0q3-15 15-11L10-4 3 3h-20Z" fill="#f4f2e9" stroke="#344632" stroke-width="1.5"/><path d="m7-8 11 2-10 3" fill="#ef5a38"/><circle cx="3" cy="-7" r="1.5" fill="#203c34"/><path d="M-9 4v5m6-5v5" stroke="#344632" stroke-width="1.5"/></g>
+        </g></g>
+        <g class="bubbles" stroke="#d9e7cf" fill="none"><circle cx="803" cy="424" r="8"/><circle cx="847" cy="454" r="5"/><circle cx="790" cy="478" r="4"/><circle cx="825" cy="498" r="7"/></g>
+      </svg>
+      <div class="harbor-console"><div class="console-status"><span class="status-dot"></span><span id="ship-status" role="status" aria-live="polite">ALL SYSTEMS… OPTIMISTIC.</span></div><button id="sink" class="danger-button"><span class="button-dot"></span><span id="sink-label">Whatever you do, don’t press this</span><span>↗</span></button></div>
+      <div class="incident-tag" aria-hidden="true"><span>COFFEE: SECURED.<br>SHIP: COMPLICATED.</span></div>
+    </div>
+    <div class="scene-caption"><span><span id="incident-count">00</span> INCIDENTS REPORTED <span class="tiny-asterisk">✳</span> TODAY</span><span>SCROLL TO GO OVERBOARD <span>↓</span></span></div>
+  </section>
+  <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>GOOD IDEAS. STRANGE WATERS. <i>✳</i> BUILT TO SHIP. <i>✳</i> MILDLY UNHINGED. <i>✳</i> </span><span>GOOD IDEAS. STRANGE WATERS. <i>✳</i> BUILT TO SHIP. <i>✳</i> MILDLY UNHINGED. <i>✳</i> </span></div></div>
+  <section class="cargo section-pad" id="cargo" aria-labelledby="cargo-title">
+    <div class="section-header reveal"><p class="eyebrow">01 / THE CARGO</p><p>Useful things.<br>Unusual delivery.</p></div>
+    <h2 id="cargo-title" class="reveal">Big ideas.<br><span class="soft">Small crew.</span></h2>
+    <div class="cargo-grid">
+      <article class="cargo-card reveal"><span class="cargo-number">01 / WEB</span><div class="cargo-graphic browser-graphic" aria-hidden="true"><div class="mini-browser"><div class="browser-bar">● ● ● <span>localhost:ship</span></div><div class="browser-body"><span>HELLO,<br>WORLD.</span><i>↗</i></div></div><div class="float-sticker">NICE.</div></div><h3>A proper first impression.</h3><p>Websites, landing pages and digital storefronts with a point of view. Made to work as well as they look.</p><span class="cargo-foot">DESIGN + DEVELOPMENT <span>↗</span></span></article>
+      <article class="cargo-card reveal"><span class="cargo-number">02 / SYSTEMS</span><div class="cargo-graphic system-graphic" aria-hidden="true"><div class="system-node n1">YOU</div><span class="system-line l1"></span><div class="system-node n2">THE APP</div><span class="system-line l2"></span><div class="system-node n3">IT WORKS <i>✓</i></div><span class="system-packet"></span></div><h3>Good stuff under the hood.</h3><p>Apps, dashboards and integrations that turn “wouldn’t it be cool if…” into something you can actually use.</p><span class="cargo-foot">APPS + INTEGRATIONS <span>↗</span></span></article>
+      <article class="cargo-card reveal"><span class="cargo-number">03 / TOOLS</span><div class="cargo-graphic tool-graphic" aria-hidden="true"><div class="tool-window"><span>&gt; make life easier</span><span class="terminal-line">building something useful<span class="terminal-cursor">_</span></span><strong>less busywork.<br>more good work.</strong><span class="tool-success">✓ SHIPPED</span></div></div><h3>Small. Weirdly useful.</h3><p>Custom tools, plugins and automations that do the repetitive bits. Your future self says thanks.</p><span class="cargo-foot">TOOLS + AUTOMATION <span>↗</span></span></article>
+    </div>
+  </section>
+  <section class="bearing section-pad" id="bearing" aria-labelledby="bearing-title">
+    <div class="bearing-top reveal"><p class="eyebrow">02 / OUR BEARING</p><div class="compass" aria-hidden="true"><span>N</span><i>✳</i><span>S</span></div></div>
+    <h2 id="bearing-title" class="reveal">Serious about<br>the <span class="outline-word">build.</span><br>Less about<br>the <span class="serif-word">boat.</span></h2>
+    <div class="bearing-copy reveal"><p>We’re Dockspire. A digital workshop for people with something to make.</p><p>We like clear thinking, good design and getting our hands into the code. A little curiosity. A lot of care. And enough humour to enjoy the voyage.</p><button class="round-link contact-trigger">Meet your crew <span>↗</span></button></div>
+    <div class="process"><div class="process-row reveal"><span>01</span><h3>Find the good idea.</h3><p>The stranger the starting point,<br>the better the conversation.</p><i>↗</i></div><div class="process-row reveal"><span>02</span><h3>Make it hold water.</h3><p>Design it. Build it. Try to break it.<br>Fix the bit we just broke.</p><i>↗</i></div><div class="process-row reveal"><span>03</span><h3>Ship the thing.</h3><p>Get it out into the world.<br>Then keep making it better.</p><i>↗</i></div></div>
+  </section>
+  <section class="contact section-pad" id="contact" aria-labelledby="contact-title"><div class="reveal contact-top"><p class="eyebrow">03 / THE NEXT VOYAGE</p><span>OPEN TO GOOD IDEAS <span class="status-dot"></span></span></div><div class="contact-heading reveal"><h2 id="contact-title">GOT A<br>WILD IDEA?</h2><button class="contact-trigger big-arrow" aria-label="Get in touch with Dockspire">↗</button></div><div class="contact-bottom reveal"><p>Bring the idea.<br>We’ll bring the questionable boat.</p><button class="text-link contact-trigger">Let’s make some waves <span>↗</span></button></div></section>
+</main>
+<footer class="footer"><a class="wordmark" href="#" aria-label="Dockspire home"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M18 3v23M11 9h14M5 20c0 9 8 12 13 12s13-3 13-12M1 23l4-5 5 4M26 22l5-4 4 5"/></svg>dockspire<span>✳</span></a><p>© <span id="year">2026</span> Dockspire.<br>Still afloat. Somehow.</p><a href="https://github.com/Dockspire" target="_blank" rel="noopener noreferrer">Find us on GitHub ↗</a><button id="back-top">Back to dry land ↑</button></footer>
+<dialog id="contact-dialog" aria-labelledby="dialog-title"><button id="close-dialog" aria-label="Close contact dialog">×</button><p class="eyebrow">CAPTAIN’S LINE</p><h2 id="dialog-title">Pick your<br>co-conspirator.</h2><p>Find the crew on GitHub. Tell us what you have in mind.</p><a class="crew-link" href="https://github.com/santaz1995" target="_blank" rel="noopener noreferrer"><span class="crew-avatar">V</span><span>Viacheslav<small>@santaz1995</small></span><b>↗</b></a><a class="crew-link" href="https://github.com/akotelevskyi-crptlg" target="_blank" rel="noopener noreferrer"><span class="crew-avatar anton">A</span><span>Anton<small>@akotelevskyi-crptlg</small></span><b>↗</b></a><p class="dialog-footnote">No message in a bottle required.</p></dialog>
+<div class="event-toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
